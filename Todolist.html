@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todolist</title>
+  <style>
+    body {
+      background: #f9f9f9;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .todo-container {
+      border: 2px solid #273450;
+      border-radius: 10px;
+      background: #fff;
+      width: 330px;
+      box-shadow: 0 2px 12px #ccc;
+      padding: 25px 25px 30px 25px;
+    }
+    .title {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-family: cursive;
+      font-size: 1.8em;
+      letter-spacing: 2px;
+    }
+    .todo-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .todo-item input[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+      margin-right: 12px;
+      accent-color: #09215a;
+    }
+    .todo-item label {
+      font-size: 1.1em;
+      letter-spacing: 1px;
+    }
+    .submit-btn {
+      display: block;
+      width: 90%;
+      margin: 20px auto 0 auto;
+      padding: 8px 0;
+      border: 2px solid #273450;
+      border-radius: 6px;
+      background: #fff;
+      color: #273450;
+      font-size: 1.1em;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .submit-btn:hover {
+      background: #273450;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <h2 class="title">Todolist</h2>
+    <form id="todoForm">
+      <div class="todo-item">
+        <input type="checkbox" id="video-class">
+        <label for="video-class">video class</label>
+      </div>
+      <div class="todo-item">
+        <input type="checkbox" id="leetcode">
+        <label for="leetcode">leetcode</label>
+      </div>
+      <div class="todo-item">
+        <input type="checkbox" id="hackerrank">
+        <label for="hackerrank">hackerrank</label>
+      </div>
+      <div class="todo-item">
+        <input type="checkbox" id="codechef">
+        <label for="codechef">codechef</label>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+  
+  <!-- Canvas Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    document.getElementById('todoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Confetti Party Bomb effect
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+      // Optional: Notify the user
+      setTimeout(() => {
+        alert('Tasks Submitted! 🎉');
+      }, 300);
+    });
+  </script>
+</body>
+</html>
